@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #333;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.1em; /* Reduced font size */
+  line-height: 1.1;
+  color: #333; /* Ensure visibility against white background */
+  font-weight: normal; /* Ensure text is not bold */
+  margin-bottom: 0em;
+  min-height: 1.1em; /* Ensure space for text even when empty */
+  /* max-width: 100%; Removed, let it expand with content */
+  /* white-space: nowrap; Removed, let it flow naturally */
+  /* overflow: hidden; Removed, let content be visible */
+}
+
+#text-section {
+  display: flex;
+  align-items: center; /* Vertically align video icon, h1, and cursor */
+  justify-content: flex-start; /* Align text and cursor to the left */
+  width: 100%; /* Ensure text section takes full width to stabilize centering */
+}
+
+#text-and-cursor-wrapper {
+  display: inline-flex; /* Make it an inline flex container */
+  align-items: center; /* Vertically align text and cursor */
+  justify-content: flex-start; /* Align text and cursor to the left */
+  /* width: 100%; Removed, let it shrink-wrap content */
+}
+
+#cursor {
+  display: inline-block;
+  background-color: #333; /* Match text color for the block */
+  width: 0.7em; /* Increased width of the block cursor */
+  height: 1.6em; /* Increased height of the block cursor */
+  margin-left: 0.1em;
+  animation: blink 0.7s infinite;
+  vertical-align: text-bottom;
+}
+#construction-video-icon {
+  margin-right: 0.5em; /* Space between video icon and text */
+  vertical-align: middle; /* Align video icon vertically with the text */
+  height: 120px; /* Default height for the video icon */
+}
+
+#main-construction-video {
+  width: 550px; /* Default width for the main construction video */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+  }
+
+  #text-section {
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center the icon horizontally */
+  }
+
+  #text-and-cursor-wrapper {
+    display: flex; /* Change to flex to allow wrapping */
+    flex-wrap: wrap; /* Allow text and cursor to wrap */
+    justify-content: flex-start; /* Align text and cursor to the left */
+    width: 100%; /* Ensure it takes full width */
+  }
+
+  #construction-video-icon {
+    margin-right: 0; /* Remove right margin when stacked */
+    margin-bottom: 0.5em; /* Add space below the icon */
+    /* align-self: flex-start; Removed to allow centering by parent */
+  }
+
+  #main-construction-video {
+    width: 100%; /* Increased width to make it wider on mobile */
+    margin: 0 auto; /* Center the video */
+  }
+
+  h1 {
+    font-size: clamp(0.8em, 3.7vw, 0.9em); /* Reduced font size values for small screens */
+    /* width: 100%; Removed, inline-flex parent handles width */
+    /* text-align: left; Removed, inline-flex parent handles alignment */
+    /* align-self: flex-start; This is no longer needed as wrapper handles alignment */
+  }
+
+  #cursor {
+    width: 0.5em; /* Smaller width for cursor on small screens */
+    height: 1.2em; /* Smaller height for cursor on small screens */
+  }
+
+  #construction-video-icon {
+    width: 60px; /* Even smaller video icon for smaller screens */
+    height: 60px;
+  }
+}
+#construction-alert {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #3178c6aa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
