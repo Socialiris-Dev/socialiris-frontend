@@ -49,7 +49,7 @@ function typeWriter(timestamp: number = 0) {
       // Determine the target speed
       let currentSpeed = typingSpeed;
       if (phraseIndex === 0 && textElement!.textContent === pauseAfterDust) {
-        currentSpeed = 3500; // 3.5 second pause
+        currentSpeed = 2500; // 3.5 second pause
       }
 
       if (deltaTime >= currentSpeed) {
