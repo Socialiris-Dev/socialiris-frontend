@@ -49,7 +49,7 @@ function typeWriter(timestamp: number = 0) {
       // Determine the target speed
       let currentSpeed = typingSpeed;
       if (phraseIndex === 0 && textElement!.textContent === pauseAfterDust) {
-        currentSpeed = 2600; // 2 second pause
+        currentSpeed = 3500; // 3.5 second pause
       }
 
       if (deltaTime >= currentSpeed) {
@@ -62,7 +62,7 @@ function typeWriter(timestamp: number = 0) {
       // Phrase completed
       lastTime = 0;
       if (phraseIndex === 0) {
-        setTimeout(() => requestAnimationFrame(unTypeWriter), 2400);
+        setTimeout(() => requestAnimationFrame(unTypeWriter), 3400);
       } else if (phraseIndex === phrases.length - 1) {
         setTimeout(() => requestAnimationFrame(unTypeWriter), 4000);
       }
