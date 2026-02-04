@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "javascript-obfuscator": "^5.2.1",
+    "terser": "^5.46.0",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-javascript-obfuscator": "^3.1.0"
   }
 }
