@@ -83,4 +83,19 @@ function unTypeWriter() {
   }
 }
 
-typeWriter();
+const mainVideo = document.getElementById('main-construction-video') as HTMLVideoElement;
+
+if (mainVideo) {
+  // If video is already loaded (from cache), start immediately
+  if (mainVideo.readyState >= 3) {
+    typeWriter();
+  } else {
+    // Otherwise, wait for it to be ready to play
+    mainVideo.addEventListener('canplay', () => {
+      typeWriter();
+    }, { once: true });
+  }
+} else {
+  // Fallback if video element isn't found
+  typeWriter();
+}
