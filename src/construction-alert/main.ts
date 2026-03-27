@@ -13,7 +13,7 @@ const textElement = document.getElementById('typing-text');
 const cursorElement = document.getElementById('cursor');
 const phrases = [
   "Pardon our dust! This site is under construction.",
-  "We're busy crafting something special for you."
+  "We're busy building something special for you."
 ];
 let phraseIndex = 0;
 let charIndex = 0;
